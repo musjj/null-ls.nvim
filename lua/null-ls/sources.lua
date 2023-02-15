@@ -3,6 +3,7 @@ local log = require("null-ls.logger")
 local methods = require("null-ls.methods")
 local s = require("null-ls.state")
 local u = require("null-ls.utils")
+local c = require("null-ls.config")
 
 local validate = vim.validate
 
@@ -98,7 +99,7 @@ local matches_method = function(source, method)
 end
 
 M.is_available = function(source, filetype, method)
-    if source._disabled or source.generator._failed then
+    if source._disabled or (c.get().disable_on_error and source.generator._failed) then
         return false
     end
 

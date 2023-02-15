@@ -55,6 +55,7 @@ local defaults = {
     default_timeout = 5000,
     diagnostic_config = nil,
     diagnostics_format = "#{m}",
+    disable_on_error = true,
     fallback_severity = vim.diagnostic.severity.ERROR,
     log_level = "warn",
     notify_format = "[null-ls] %s",
@@ -153,6 +154,11 @@ Formats diagnostics as follows:
 
 You can also configure `diagnostics_format` per built-in by using the `with`
 method, described in [BUILTIN_CONFIG](BUILTIN_CONFIG.md).
+
+### disable_on_error (boolean)
+
+Controls the automatic disabling of a source when the generator encounters an
+error.
 
 ### fallback_severity (number)
 

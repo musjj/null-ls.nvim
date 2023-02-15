@@ -8,6 +8,7 @@ local defaults = {
     debug = false,
     default_timeout = 5000,
     diagnostics_format = "#{m}",
+    disable_on_error = true,
     fallback_severity = vim.diagnostic.severity.ERROR,
 
     ---@usage set logging level
